@@ -1,15 +1,18 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import React, { useState } from "react";
 import add from '../img/upload.png';
-import { auth, app, storage, db } from "../firebase";
+import { auth,  storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
 
-    const handleSubmit = async (e) => {
+    const [ useErr, setError ] = useState(false);
+    const navigate = useNavigate();
 
+    const handleSubmit = async (e) => {
 
         e.preventDefault();
         const displayName = e.target[0].value;
@@ -39,7 +42,7 @@ const Register = () => {
                     }
                 },
                 (error) => {
-
+                    setError(true);
                 },
                 () => {
 
@@ -57,6 +60,9 @@ const Register = () => {
                             email,
                             photoURL: downloadURL
                         });
+
+                        await setDoc(doc(db, 'userChats', res.user.uid), {});
+                        navigate("/");
                     });
                 }
             );
@@ -80,6 +86,7 @@ const Register = () => {
                     <input type='password' placeholder="password" />
                     <input type='file' id="file" style={{ display: 'none' }} />
                     <label htmlFor="file">
+                        { useErr && <span> Something were wrong </span> }
                         <img className="imgUpload" src={add}></img>
 
                         Add an Avatar
