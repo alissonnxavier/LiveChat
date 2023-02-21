@@ -10,9 +10,10 @@ const Message = () => {
                 <span> Just now </span>
             </div>
             <div className="messageContent">
-            {/* <img src={human} alt='human' /> */} 
                 <p> hello </p>
-                
+                <img src={human} alt='human' />
+
+
 
             </div>
         </div>
