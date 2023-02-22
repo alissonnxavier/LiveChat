@@ -53,6 +53,11 @@
             flex-direction: column;
             gap: 15px;
 
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+
             input {
                 padding: 15px;
                 border: none;
