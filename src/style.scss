@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
+
+
 @mixin mobile{
     @media screen and (max-width: 480px){
         @content;
@@ -25,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
     .formWrapper {
 
@@ -40,6 +45,7 @@
             color: #5d5b8d;
             font-weight: bold;
             font-size: 24px;
+            
            
         }
 
@@ -110,23 +116,33 @@
     align-items: center;
     justify-content: center;
 
+
+
     .container {
-        border: 1px solid white;
+        border: 1px solid grey;
         border-radius: 10px;
         width: 65%;
         height: 80%;
         display: flex;
         overflow: hidden;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
         @include tablet{
             width: 90%;
         }
 
         .sidebar {
             flex: 1;
-            background-color: #3e3c61;
+            background-image: linear-gradient(to right,#047c82 , #11787d , #217d82, #337e82, #448487, #4e8285);
 
             .search {
                 border-bottom: 1px solid gray;
+                height: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
 
                 .searchForm {
 
@@ -136,6 +152,7 @@
                         border: none;
                         color: white;
                         outline: none;
+                        font-family: 'Gajraj One', cursive;
 
                         &::placeholder {
                             color: lightgray;
@@ -153,7 +170,9 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #2f2d52;
+                    background-image: linear-gradient(to right,#031e1f , #286e70 60%, #0e4547);
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    border-radius: 10%;
                 }
 
                 img {
@@ -165,12 +184,13 @@
 
                 .userChatInfo {
                     span {
-                        font-size: 18px;
+                        font-size: 15px;
                         font-weight: 500;
+                        font-family: 'Gajraj One', cursive;
                     }
 
                     p {
-                        font-size: 14px;
+                        font-size: 12px;
                         color: lightgrey;
                     }
                 }
@@ -178,6 +198,8 @@
         }
 
         .chat {
+
+
             img {
                 width: 30px;
                 height: 30px;
@@ -188,11 +210,14 @@
         .navbar {
             display: flex;
             align-items: center;
-            background-color: #2f2d52;
+            
             height: 50px;
             padding: 10px;
             justify-content: space-between;
             color: #ddddf7;
+            font-family: 'Gajraj One', cursive;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
             div {
                 display: flex;
@@ -216,6 +241,22 @@
                 cursor: pointer;
                 padding: 0.3rem;
                 margin: 0.5rem;
+                height: 2rem;
+                border-radius: 10%;
+                font-family: 'Gajraj One', cursive;
+                transition: 1s;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+                
+            }
+
+            button:hover{
+                background-color: #703544;
+                height: 2.3rem;
+                color: #3fb547;
+                border-bottom: solid 2px red;
+                border-top: solid 2px red;
+                border-right: solid 2px red;
             }
 
         }
@@ -238,12 +279,14 @@
 
             .chatInfo {
                 height: 50px;
-                background-color: #5d5b8d;
+                background-image: linear-gradient(to right,#047c82 , #11787d , #217d82, #337e82, #448487, #4e8285);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding: 10px;
                 color: lightgrey;
+                box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
             }
 
             .chatIcons {
@@ -260,6 +303,8 @@
                 padding: 10px;
                 height: calc(100% - 160px);
                 overflow: scroll;
+                box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
                 .message {
                     display: flex;
@@ -269,7 +314,7 @@
                     .messageInfo {
                         display: flex;
                         flex-direction: column;
-                        color: gray;
+                        color: rgb(124, 67, 67);
                         font-weight: 300;
 
                         img {
@@ -287,10 +332,13 @@
                         gap: 10px;
 
                         p {
-                            background-color: white;
+                            background-color: rgb(145, 218, 189);
                             padding: 10px 20px;
                             border-radius: 0px 10px 10px 10px;
                             max-width: max-content;
+                            color: white;
+                            box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
                         }
 
                         img {
@@ -307,7 +355,7 @@
                             align-items: flex-end;
 
                             p {
-                                background-color: #8da4f1;
+                                background-color: #032f0b;
                                 color: white;
                                 border-radius: 10px 0px 10px 10px;
                             }
