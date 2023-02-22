@@ -4,7 +4,7 @@ import add from '../img/upload.png';
 import { auth,  storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Register = () => {
@@ -19,6 +19,8 @@ const Register = () => {
         const email = e.target[1].value;
         const password = e.target[2].value;
         const file = e.target[3].value;
+
+        console.log('aqui   file   ' + file);
 
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -67,8 +69,6 @@ const Register = () => {
                 }
             );
 
-
-
         } catch (useErr) {
             console.log(useErr);
 
@@ -84,17 +84,16 @@ const Register = () => {
                     <input type='text' placeholder="display name" />
                     <input type='email' placeholder="email" />
                     <input type='password' placeholder="password" />
-                    <input type='file' id="file" style={{ display: 'none' }} />
+                    <input type='file' id="file" style={{ display: 'none' }} name='file'/>
                     <label htmlFor="file">
                         { useErr && <span> Something were wrong </span> }
                         <img className="imgUpload" src={add}></img>
-
                         Add an Avatar
                     </label>
                     <button> Sign up </button>
                 </form>
 
-                <p> You do have an account? Login</p>
+                <p> You do have an account? <Link to={"/login"}> Login </Link></p>
 
             </div>
 
