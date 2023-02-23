@@ -1,21 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
 
 
-@mixin mobile{
-    @media screen and (max-width: 480px){
+@mixin mobile {
+    @media screen and (max-width: 480px) {
         @content;
     }
 }
 
-@mixin tablet{
-    @media screen and (max-width: 768px){
+@mixin tablet {
+    @media screen and (max-width: 768px) {
         @content;
     }
 }
 
-@mixin laptop{
-    @media screen and (max-width: 1200px){
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
         @content;
     }
 }
@@ -24,29 +23,31 @@
 
 
 .formContainer {
-    background-color: #a7bcff;
+    background-color: #d5ebe9;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 
     .formWrapper {
 
-        background-color: white;
+        background-color: #87b2c7;
         padding: 20px 60px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 
         .logo {
             color: #5d5b8d;
             font-weight: bold;
             font-size: 24px;
-            
-           
+
+
         }
 
         .title {
@@ -59,7 +60,7 @@
             flex-direction: column;
             gap: 15px;
 
-            img{
+            img {
                 width: 2rem;
                 height: 2rem;
             }
@@ -68,6 +69,8 @@
                 padding: 15px;
                 border: none;
                 border-bottom: 1px solid #a7bcff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 5%;
 
                 &::placeholder {
                     color: rgb(175, 175, 175);
@@ -75,16 +78,24 @@
             }
 
             button {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 background-color: #7b96ec;
                 color: white;
                 padding: 10px;
                 font-weight: bold;
                 border: none;
                 cursor: pointer;
-                @include tablet{
+                background-image: linear-gradient(to right, #7d84a9, #564f85, #574e9e, #403991, #3a288d, #210d8f);
+
+
+                @include tablet {
                     position: absolute;
                     bottom: 10px;
                 }
+            }
+
+            button:hover {
+                box-shadow: none;
             }
 
             label {
@@ -110,7 +121,7 @@
 }
 
 .home {
-    background-color: #a7bcff;
+    background-image: linear-gradient(to right, #b1bebf, #92b6b8, #87bcbf);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -128,13 +139,13 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
-        @include tablet{
+        @include tablet {
             width: 90%;
         }
 
         .sidebar {
             flex: 1;
-            background-image: linear-gradient(to right,#047c82 , #11787d , #217d82, #337e82, #448487, #4e8285);
+            background-image: linear-gradient(to right, #047c82, #11787d, #217d82, #337e82, #448487, #4e8285);
 
             .search {
                 border-bottom: 1px solid gray;
@@ -170,7 +181,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-image: linear-gradient(to right,#031e1f , #286e70 60%, #0e4547);
+                    background-image: linear-gradient(to right, #031e1f, #286e70 60%, #0e4547);
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                     border-radius: 10%;
                 }
@@ -210,7 +221,7 @@
         .navbar {
             display: flex;
             align-items: center;
-            
+
             height: 50px;
             padding: 10px;
             justify-content: space-between;
@@ -234,7 +245,7 @@
             }
 
             button {
-                background-color: #5d5b8d;
+                background-color: #011302;
                 color: #ddddf7;
                 font-size: 10px;
                 border: none;
@@ -247,10 +258,10 @@
                 transition: 1s;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-                
+
             }
 
-            button:hover{
+            button:hover {
                 background-color: #703544;
                 height: 2.3rem;
                 color: #3fb547;
@@ -263,7 +274,8 @@
 
         .logo {
             font-weight: bold;
-            @include tablet{
+
+            @include tablet {
                 display: none;
             }
 
@@ -279,7 +291,7 @@
 
             .chatInfo {
                 height: 50px;
-                background-image: linear-gradient(to right,#047c82 , #11787d , #217d82, #337e82, #448487, #4e8285);
+                background-image: linear-gradient(to right, #047c82, #11787d, #217d82, #337e82, #448487, #4e8285);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -299,7 +311,7 @@
             }
 
             .messages {
-                background-color: #ddddf7;
+                background-color: #fbfff8;
                 padding: 10px;
                 height: calc(100% - 160px);
                 overflow: scroll;
@@ -382,7 +394,7 @@
                     font-size: 18px;
 
                     &::placeholder {
-                        color: lightgray;
+                        color: rgb(4, 95, 14);
                     }
                 }
 
@@ -400,9 +412,17 @@
                         border: none;
                         padding: 1rem;
                         color: white;
-                        background-color: #8da4f1;
+                        background-image: linear-gradient(to right, #529c92, #3eb0a1, #047c82, #11787d, #217d82, #337e82, #448487, #4e8285);
+
                         cursor: pointer;
                         border-radius: 10%;
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+                    }
+
+                    button:hover {
+                        box-shadow: none;
                     }
                 }
             }

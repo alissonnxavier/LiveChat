@@ -30,7 +30,7 @@ const Login = () => {
     return (
         <div className="formContainer">
             <div className="formWrapper">
-                <span className="logo"> Lama chat </span>
+                <span className="logo"> BaguiChat </span>
                 <span className="title"> SignIn  </span>
                 <form onSubmit={handleSubmit}>
                     <input type='email' placeholder="email" />
